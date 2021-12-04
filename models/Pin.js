@@ -1,36 +1,32 @@
 import mongoose from "mongoose";
 
+
 // MongoDB schema 
 const PinSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      require: true,
     },
     title: {
       type: String,
-      require: true,
     },
     desc: {
       type: String,
-      require: true,
     },
     rating: {
       type: Number,
-      require: true,
       min: 0,
       max: 5,
     },
     lat: {
       type: Number,
-      require: true
     },
-    lat: {
+
+    long: {
       type: Number,
-      require: true
     }
-  },
-  { timestamps: true }
+  }, 
+  {timestamps: true}
 );
 
 

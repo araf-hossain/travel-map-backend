@@ -2,10 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import pinRoute from "./routes/pins.js";
+import userRoute from "./routes/users.js";
 
 
 const app = express();
 dotenv.config();
+app.use(express.json()); // so that we can get anything as json format from any request.
 
 
 // connecting with mongo db. https://cloud.mongodb.com/
@@ -16,9 +18,8 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use(express.json()); // so that we can get anything as json format from any request.
 app.use("/api/pins", pinRoute);
-
+app.use("/api/users", userRoute);
 
 // listening this port 
 app.listen(8800, () => {

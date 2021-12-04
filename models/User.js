@@ -19,11 +19,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       require: true,
       min: 5,
-      max: 50,
-      required,
+      max: 100,
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("User", UserSchema);
+export default mongoose.model("User", UserSchema);
